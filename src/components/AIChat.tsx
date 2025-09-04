@@ -74,11 +74,6 @@ export function AIChat() {
             <Mic className="w-5 h-5" />
           </Button>
         </div>
-
-        {/* Chat Box Label */}
-        <div className="mt-2 text-center">
-          <span className="text-lg font-semibold text-foreground">Chat Box</span>
-        </div>
       </div>
     </div>
   );
