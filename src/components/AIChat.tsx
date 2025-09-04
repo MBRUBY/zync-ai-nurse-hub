@@ -29,7 +29,7 @@ export function AIChat() {
 
   return (
     <div className="fixed bottom-6 left-64 right-8 flex justify-center">
-      <div className="bg-card rounded-3xl shadow-floating border border-border p-4 w-full max-w-4xl">
+      <div className="bg-card rounded-3xl shadow-floating border border-border p-4 w-full max-w-4xl shadow-[0_0_20px_rgba(59,130,246,0.3),0_0_40px_rgba(59,130,246,0.1)] animate-pulse">
         <div className="flex items-center gap-3">
           {/* Upload Button */}
           <Button 
