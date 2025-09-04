@@ -25,16 +25,16 @@ export default function Dashboard() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card className="border-border shadow-card hover:shadow-medical transition-all duration-300">
+        <Card className=" ml-4 border-border shadow-card hover:shadow-medical transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Total Patients</CardTitle>
+            <CardTitle className="text-sm font-medium">Vaccination Completed</CardTitle>
             <Users className="h-4 w-4 text-medical-primary" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">247</div>
+            <div className="text-2xl font-bold text-foreground">5</div>
             <p className="text-xs text-medical-success">
               <TrendingUp className="inline w-3 h-3 mr-1" />
-              +12% from last month
+              +50% from last month
             </p>
           </CardContent>
         </Card>
@@ -66,12 +66,12 @@ export default function Dashboard() {
 
         <Card className="border-border shadow-card hover:shadow-medical transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Alerts</CardTitle>
+            <CardTitle className="text-sm font-medium">Active Medication</CardTitle>
             <Bell className="h-4 w-4 text-medical-error" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">7</div>
-            <p className="text-xs text-medical-error">3 urgent alerts</p>
+            <div className="text-2xl font-bold text-foreground">2</div>
+            <p className="text-xs text-medical-error">1 pending tonight </p>
           </CardContent>
         </Card>
       </div>
@@ -79,7 +79,7 @@ export default function Dashboard() {
       {/* Recent Activity & Vital Signs */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Activity */}
-        <Card className="border-border shadow-card">
+        <Card className=" ml-4 border-border shadow-card">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Activity className="w-5 h-5 text-medical-primary" />

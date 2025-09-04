@@ -29,7 +29,8 @@ export function AIChat() {
 
   return (
     <div className="fixed bottom-6 left-64 right-8 flex justify-center">
-      <div className="bg-card rounded-3xl shadow-floating border border-border p-4 w-full max-w-4xl shadow-[0_0_20px_rgba(59,130,246,0.3),0_0_40px_rgba(59,130,246,0.1)] animate-pulse">
+      {/* Chatbox container - removed animate-pulse */}
+      <div className="bg-card rounded-3xl shadow-floating border border-border p-4 w-full max-w-4xl shadow-[0_0_20px_rgba(59,130,246,0.3),0_0_40px_rgba(59,130,246,0.1)]">
         <div className="flex items-center gap-3">
           {/* Upload Button */}
           <Button 
@@ -60,14 +61,14 @@ export function AIChat() {
             </Button>
           </div>
 
-          {/* Voice Button */}
+          {/* Voice Button - removed animate-pulse */}
           <Button 
             size="icon" 
             variant={isRecording ? "default" : "outline"}
             onClick={toggleRecording}
             className={`rounded-full w-10 h-10 ${
               isRecording 
-                ? "bg-medical-error hover:bg-medical-error/90 text-white animate-pulse" 
+                ? "bg-medical-error hover:bg-medical-error/90 text-white" 
                 : "hover:bg-accent/50"
             }`}
           >

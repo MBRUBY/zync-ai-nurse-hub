@@ -8,47 +8,27 @@ export default function Alerts() {
     {
       id: 1,
       type: "critical",
-      title: "Patient Vital Signs Critical",
-      message: "Patient in Room 105 showing abnormal heart rate (142 BPM)",
-      time: "2 minutes ago",
-      room: "Room 105",
-      patient: "John Smith"
+      title: "Cyclone Incoming",
     },
     {
       id: 2,
       type: "warning",
-      title: "Medication Due",
-      message: "Patient Sarah Wilson's medication is due for administration",
-      time: "5 minutes ago",
-      room: "Room 208",
-      patient: "Sarah Wilson"
+      title: "Leptospirosis Outbreaks",
     },
     {
       id: 3,
       type: "urgent",
-      title: "Emergency Call",
-      message: "Emergency assistance requested in ICU Ward",
-      time: "8 minutes ago",
-      room: "ICU-A",
-      patient: "Emergency"
+      title: "Flood Incoming",
     },
     {
       id: 4,
       type: "info",
-      title: "Lab Results Available",
-      message: "Blood test results ready for review - Patient Michael Brown",
-      time: "15 minutes ago",
-      room: "Room 302",
-      patient: "Michael Brown"
+      title: "Measures to take to prevent Leptospirosis",
     },
     {
       id: 5,
       type: "warning",
-      title: "Equipment Maintenance",
-      message: "Ventilator in Room 204 requires scheduled maintenance",
-      time: "1 hour ago",
-      room: "Room 204",
-      patient: "Equipment Alert"
+      title: "Cholera Outbreak",
     }
   ];
 
@@ -85,16 +65,16 @@ export default function Alerts() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex flex-col gap-2">
+      <div className="text-center">
         <h1 className="text-3xl font-bold text-foreground">Alerts & Notifications</h1>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground whitespace-nowrap">
           Monitor critical alerts, warnings, and notifications across the medical facility.
         </p>
       </div>
 
       {/* Alert Summary */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card className="border-medical-error/20 bg-medical-error/5">
+        <Card className=" ml-4 border-medical-error/20 bg-medical-error/5">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">
               <AlertTriangle className="w-6 h-6 text-medical-error" />
@@ -144,7 +124,7 @@ export default function Alerts() {
       </div>
 
       {/* Alerts List */}
-      <Card className="border-border shadow-card">
+      <Card className=" ml-4 border-border shadow-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Bell className="w-5 h-5 text-medical-primary" />
@@ -171,10 +151,6 @@ export default function Alerts() {
                       </div>
                       <p className="text-sm text-muted-foreground mb-2">{alert.message}</p>
                       <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {alert.time}
-                        </span>
                         <span>{alert.room}</span>
                         <span>{alert.patient}</span>
                       </div>

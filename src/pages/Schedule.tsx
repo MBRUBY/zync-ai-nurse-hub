@@ -8,7 +8,7 @@ export default function Schedule() {
     {
       id: 1,
       time: "09:00 AM",
-      patient: "John Doe",
+      patient: "Dr Shilpa Chaudhary",
       room: "Room 204",
       type: "Consultation",
       status: "confirmed",
@@ -17,16 +17,16 @@ export default function Schedule() {
     {
       id: 2,
       time: "10:30 AM",
-      patient: "Sarah Wilson",
+      patient: "Dr. Manish Thukral",
       room: "Room 105",
       type: "Follow-up",
-      status: "pending",
+      status: "confirmed",
       duration: "15 min"
     },
     {
       id: 3,
       time: "11:45 AM",
-      patient: "Michael Brown",
+      patient: "Dr Vijay Shankar Kumawat",
       room: "Room 302",
       type: "Emergency",
       status: "urgent",
@@ -35,10 +35,10 @@ export default function Schedule() {
     {
       id: 4,
       time: "02:00 PM",
-      patient: "Emily Davis",
+      patient: "Mr. Siddhanta Kumar Singh",
       room: "Room 208",
       type: "Routine Check",
-      status: "confirmed",
+      status: "pending",
       duration: "20 min"
     }
   ];
@@ -52,17 +52,30 @@ export default function Schedule() {
     }
   };
 
+  const getStatusLabel = (status: string) => {
+    switch (status) {
+      case "urgent": return "Missed";
+      default: return status.charAt(0).toUpperCase() + status.slice(1);
+    }
+  };
+
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">Schedule</h1>
-            <p className="text-muted-foreground">
-              Manage your appointments and patient schedule for today.
-            </p>
-          </div>
+      <div className="flex items-center justify-between">
+        {/* Left spacer */}
+        <div className="w-1/3"></div>
+
+        {/* Centered Heading */}
+        <div className="w-1/3 text-center">
+          <h1 className="text-3xl font-bold text-foreground">Schedule</h1>
+          <p className="text-muted-foreground whitespace-nowrap">
+            Manage your appointments and patient schedule for today.
+          </p>
+        </div>
+
+        {/* Button on Right */}
+        <div className="w-1/3 flex justify-end">
           <Button className="gap-2 bg-medical-primary hover:bg-medical-primary-dark">
             <Plus className="w-4 h-4" />
             New Appointment
@@ -72,7 +85,7 @@ export default function Schedule() {
 
       {/* Today's Overview */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="border-border shadow-card">
+        <Card className="ml-4 border-border shadow-card">
           <CardHeader className="pb-3">
             <CardTitle className="flex items-center gap-2 text-lg">
               <Calendar className="w-5 h-5 text-medical-primary" />
@@ -113,7 +126,7 @@ export default function Schedule() {
       </div>
 
       {/* Schedule List */}
-      <Card className="border-border shadow-card">
+      <Card className="ml-4 border-border shadow-card">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-medical-primary" />
@@ -150,7 +163,7 @@ export default function Schedule() {
 
                 <div className="flex items-center gap-3">
                   <Badge variant="outline" className={getStatusColor(appointment.status)}>
-                    {appointment.status.charAt(0).toUpperCase() + appointment.status.slice(1)}
+                    {getStatusLabel(appointment.status)}
                   </Badge>
                   
                   <Button variant="outline" size="sm">
