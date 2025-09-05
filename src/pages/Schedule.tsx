@@ -9,37 +9,29 @@ export default function Schedule() {
       id: 1,
       time: "09:00 AM",
       patient: "Dr Shilpa Chaudhary",
-      room: "Room 204",
       type: "Consultation",
       status: "confirmed",
-      duration: "30 min"
     },
     {
       id: 2,
       time: "10:30 AM",
       patient: "Dr. Manish Thukral",
-      room: "Room 105",
       type: "Follow-up",
       status: "confirmed",
-      duration: "15 min"
     },
     {
       id: 3,
       time: "11:45 AM",
       patient: "Dr Vijay Shankar Kumawat",
-      room: "Room 302",
       type: "Emergency",
       status: "urgent",
-      duration: "45 min"
     },
     {
       id: 4,
       time: "02:00 PM",
       patient: "Mr. Siddhanta Kumar Singh",
-      room: "Room 208",
       type: "Routine Check",
       status: "pending",
-      duration: "20 min"
     }
   ];
 
@@ -107,7 +99,6 @@ export default function Schedule() {
           </CardHeader>
           <CardContent>
             <div className="text-3xl font-bold text-foreground">09:00</div>
-            <p className="text-sm text-muted-foreground">John Doe - Room 204</p>
           </CardContent>
         </Card>
 

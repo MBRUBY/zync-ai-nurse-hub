@@ -60,7 +60,7 @@ export function AppSidebar() {
             {!collapsed && (
               <div className="flex flex-col">
                 <h1 className="text-xl font-bold text-foreground">Zync</h1>
-                <p className="text-sm text-muted-foreground">Prakash Dashboard</p>
+                <p className="text-sm text-muted-foreground">Prakash's Dashboard</p>
               </div>
             )}
           </div>
