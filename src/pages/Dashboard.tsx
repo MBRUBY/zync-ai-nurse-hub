@@ -41,14 +41,14 @@ export default function Dashboard() {
 
         <Card className="border-border shadow-card hover:shadow-medical transition-all duration-300">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Active Cases</CardTitle>
+            <CardTitle className="text-sm font-medium">Active Diagnosis</CardTitle>
             <Activity className="h-4 w-4 text-medical-accent" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">89</div>
+            <div className="text-2xl font-bold text-foreground">3</div>
             <p className="text-xs text-medical-warning">
               <Clock className="inline w-3 h-3 mr-1" />
-              5 critical cases
+              1 critical case
             </p>
           </CardContent>
         </Card>
@@ -59,7 +59,7 @@ export default function Dashboard() {
             <Calendar className="h-4 w-4 text-medical-success" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-foreground">32</div>
+            <div className="text-2xl font-bold text-foreground">4</div>
             <p className="text-xs text-muted-foreground">Today's schedule</p>
           </CardContent>
         </Card>
@@ -92,8 +92,8 @@ export default function Dashboard() {
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-medical-success rounded-full"></div>
                 <div>
-                  <p className="font-medium text-sm">Patient John Doe checked in</p>
-                  <p className="text-xs text-muted-foreground">Room 204 • 2 minutes ago</p>
+                  <p className="font-medium text-sm">Dr. Shilpa's Appointment</p>
+                  <p className="text-xs text-muted-foreground">Lilawati Hospital</p>
                 </div>
               </div>
               <Badge variant="outline" className="border-medical-success text-medical-success">
@@ -106,7 +106,6 @@ export default function Dashboard() {
                 <div className="w-2 h-2 bg-medical-warning rounded-full"></div>
                 <div>
                   <p className="font-medium text-sm">Medication reminder sent</p>
-                  <p className="text-xs text-muted-foreground">Patient Sarah Wilson • 5 minutes ago</p>
                 </div>
               </div>
               <Badge variant="outline" className="border-medical-warning text-medical-warning">
@@ -119,7 +118,6 @@ export default function Dashboard() {
                 <div className="w-2 h-2 bg-medical-primary rounded-full"></div>
                 <div>
                   <p className="font-medium text-sm">Vital signs updated</p>
-                  <p className="text-xs text-muted-foreground">Room 101 • 8 minutes ago</p>
                 </div>
               </div>
               <Badge variant="outline" className="border-medical-primary text-medical-primary">
@@ -148,7 +146,6 @@ export default function Dashboard() {
                 <span className="text-sm font-mono text-medical-error">142 BPM</span>
               </div>
               <Progress value={85} className="h-2" />
-              <p className="text-xs text-muted-foreground mt-1">Room 105 - High</p>
             </div>
 
             <div className="p-4 border border-medical-warning/20 bg-medical-warning/5 rounded-lg">
@@ -160,7 +157,6 @@ export default function Dashboard() {
                 <span className="text-sm font-mono text-medical-warning">102.5°F</span>
               </div>
               <Progress value={75} className="h-2" />
-              <p className="text-xs text-muted-foreground mt-1">Room 208 - Elevated</p>
             </div>
 
             <div className="p-4 border border-medical-success/20 bg-medical-success/5 rounded-lg">
@@ -172,7 +168,6 @@ export default function Dashboard() {
                 <span className="text-sm font-mono text-medical-success">120/80</span>
               </div>
               <Progress value={60} className="h-2" />
-              <p className="text-xs text-muted-foreground mt-1">Room 302 - Normal</p>
             </div>
           </CardContent>
         </Card>
