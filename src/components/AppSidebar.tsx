@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   Activity, 
   Home, 
@@ -7,7 +7,8 @@ import {
   Bell, 
   Settings,
   Sun,
-  Moon
+  Moon,
+  Pill
 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -26,7 +27,7 @@ import { Switch } from "@/components/ui/switch";
 
 const navigationItems = [
   { title: "Dashboard", url: "/", icon: Home },
-  { title: "Ecosystem", url: "/ecosystem", icon: Network },
+  { title: "Medication", url: "/ecosystem", icon: Pill},
   { title: "Schedule", url: "/schedule", icon: Calendar },
   { title: "Alerts", url: "/alerts", icon: Bell },
 ];
@@ -37,6 +38,15 @@ export function AppSidebar() {
   const location = useLocation();
   const currentPath = location.pathname;
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // 🔹 Apply/remove dark mode on <html>
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
 
   const isActive = (path: string) => currentPath === path;
   
